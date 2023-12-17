@@ -1,7 +1,6 @@
 name: Publish unstable builds
 
-on:
-  push:
+on: push
 
 jobs:
   build_and_publish:
