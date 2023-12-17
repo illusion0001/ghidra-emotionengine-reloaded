@@ -2,6 +2,9 @@ name: Publish unstable builds
 
 on: push
 
+permissions:
+  contents: write
+
 jobs:
   build_and_publish:
     runs-on: ubuntu-latest
@@ -15,8 +18,7 @@ jobs:
         uses: actions/setup-java@main
         with:
           java-version: "17"
-          java-package: jdk
-          architecture: x64
+          distribution: "temurin"
       - name: Setup Ghidra
         uses: er28-0652/setup-ghidra@b53614dada0a16e3c342277caae905b96d803109
         with:
